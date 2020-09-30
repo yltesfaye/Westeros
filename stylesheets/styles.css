@@ -1,0 +1,214 @@
+@font-face {
+font-family: 'GoT'; /*its a string or text*/
+src: url('./fonts/W.ttf'); /* TTF most common so use this for custom fonts*/
+font-weight: bold;
+font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ancient';
+  src: url('./fonts/A2.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Medival';
+  src: url('./fonts/PV.ttf');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Throne';
+  src: url('./fonts/AT.ttf');
+}
+@font-face {
+  font-family: 'Seat';
+  src: url('./fonts/Seat.ttf');
+}
+
+html, body {
+  height: 100%;
+}
+.bg {
+  width: 100%;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  background-image: url('../img/KL2.jpg');
+  width: 100%;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main-header {
+  flex: 0 1 auto;
+}
+
+.logo-text{
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  text-decoration: none;
+  background: none;
+  text-align: center;
+  text-transform: capitalize;
+  font-family: GoT;
+  font-size: 84px;
+}
+
+.main-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.house-list {
+  display: flex;
+  flex: 0 1 auto;
+  order: 2;
+  justify-content: space-between;
+  list-style: none;
+  padding: 20px 0;
+  white-space:nowrap;
+  overflow-x: auto;
+}
+
+a {
+  text-decoration: none; /* because links are normally underlined*/
+}
+
+.house-item {
+  display: inline-block;
+  min-width: 240px;
+  max-width: 240px;
+  border: 1px solid rgb(115, 98, 54);
+  border: 1px solid rgba(102, 101, 19, 0.49);
+  transition: transform 133ms ease-in-out;
+}
+
+.house-item:hover {
+  transform: scale(1.2);
+/*  transition: transform 460ms ease-in-out; */
+
+}
+
+
+.house-image {
+  width: 100%;
+  display: block;
+}
+
+.house-name {
+  text-align: center;
+  display: block;
+  margin: 0;
+  padding: 7px 13px; /* 1st: up, down  2nd: right,left*/
+  background: #d4a05c;
+  color: rgb(89, 6, 6);
+  font-family: Ancient;
+  font-size: 31px;
+}
+
+.detail-image-container {
+
+  margin-top: 0;
+  padding-top: 0;
+  text-align: left;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.detail-image-frame{
+
+
+  margin-left: 0;
+  padding-left: 0;
+  position: relative;
+  text-align: left;
+
+
+  transition: transform 0.48s cubic-bezier(.04,.49,1,.51);
+
+}
+
+.is-tiny {
+  transform: scale(0.001);
+  transition: transform 0ms;
+}
+
+.detail-image {
+  width: 95%;
+
+
+}
+
+.detail-image-title{
+  position: absolute;
+  bottom: -58px;
+  left: 4px;
+
+  font-family: Throne;
+  font-weight: normal;
+  color: rgb(0, 0, 0);
+  text-shadow: #4d2508 19px 20px 4px;;
+  font-size: 70px;
+}
+
+.hidden-detail .detail-image-container {
+  display: none;
+}
+
+.hidden-detail .house-list {
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden-detail .house-item{
+  max-width: 80%;
+}
+
+@media all and (min-width: 768px) {
+  .main-content {
+    flex-direction: row-reverse;
+    overflow: hidden;
+  }
+  .house-list {
+    flex-direction: column;
+    order: 0;
+    margin-right: 20px;
+    padding: 0 35px;
+  }
+  .house-item{
+    max-width: 300px;
+  }
+  .house-item + .house-item{
+    margin-top: 20px;
+  }
+
+  }
+  .footer {
+    display: flex;
+    flex: 0 1 auto;
+    margin-right: 0;
+    padding-right: 0;
+    text-align: Center;
+    font-family: Medival;
+    font-size: 23px;
+  }
+  .throne {
+    text-align: right;
+    font-size: 85px;
+    font-weight: lighter;
+    font-family: Seat;
+  }
